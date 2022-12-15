@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\subcategoryController;
 use App\Http\Controllers\frontend\FrontendController;
 
 /*
@@ -33,6 +34,9 @@ Route::get('/category/manage',[CategoryController::class,'categoryManage']);
 Route::get('/category/delete/{id}',[CategoryController::class,'categoryDelete']);
 Route::get('/category/edit/{id}',[CategoryController::class,'categoryEdit']);
 Route::post('/category/update/{id}',[CategoryController::class,'categoryUpdate']);
+
+//sub Category Controller
+Route::get('/subcategory/create',[SubcategoryController::class,'subcategoryCreate']);
 
 // Color Controller
 Route::get('/color/addcolor',[ColorController::class,'add_color']);

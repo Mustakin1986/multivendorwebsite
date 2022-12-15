@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login_page</title>
-    <link rel="stylesheet" href="{{asset('backend\admin\css\admin_login.css')}}"/>
-    
-  </head>
-  <body>
-    <div class="login-box">
-      <h2>Login</h2>
-      @if (session()->has('error'))
-        <p style="color: red">{{session()->get('error') }}</p>
-      @endif
-      <form action="{{url('/admin/login')}}" method="POST">
-        @csrf
-        <div class="user-box">
-          <input type="text" name="email" required="">
-          <label>Email</label>
-        </div>
-        <div class="user-box">
-          <input type="password" name="password" required="">
-          <label>Password</label>
-        </div>
-        <button type="submit">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Submit
-        </button>
-      </form>
-    </div>
-  </body>
-</html>
+  <link rel="stylesheet" href="{{asset('backend\admin\css\admin_login.css')}}"/>
+<link href="{{asset('backend\admin\css\bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+<script src="{{asset('backend\admin\admin_js\bootstrap.min.js')}}"></script>
+<script src="{{asset('backend\admin\admin_js\jquery.min.js')}}"></script>
+<!------ Include the above in your HEAD tag ---------->
 
+</head>
+
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        @if (session()->has('error'))
+                        <p style="color: red">{{session()->get('error') }}</p>
+                         @endif
+                        <form id="login-form" class="form" action="{{url('/admin/login')}}" method="post">
+                          @csrf
+                            <h3 class="text-center text-info">Login</h3>
+
+                            <div class="form-group">
+                                <label for="username" class="text-info">User Email:</label><br>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <a href="#" class="text-info">Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
