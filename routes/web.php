@@ -37,6 +37,11 @@ Route::post('/category/update/{id}',[CategoryController::class,'categoryUpdate']
 
 //sub Category Controller
 Route::get('/subcategory/create',[SubcategoryController::class,'subcategoryCreate']);
+Route::post('/subcategory/store',[SubcategoryController::class,'subcategoryStore']);
+Route::get('/subcategory/Manage',[SubcategoryController::class,'subcategoryManage']);
+Route::get('/subcategory/edit/{id}',[SubcategoryController::class,'subcategoryEdit']);
+Route::get('/subcategory/delete/{id}',[SubcategoryController::class,'subcategoryDelete']);
+Route::post('/subcategory/update/{id}',[SubcategoryController::class,'subcategoryUpdate']);
 
 // Color Controller
 Route::get('/color/addcolor',[ColorController::class,'add_color']);

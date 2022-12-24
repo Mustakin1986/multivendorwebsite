@@ -11,22 +11,22 @@
          <div class="card">
            <div class="card-body">
             <h1>Add Sub Category</h1>
-                  <form action="{{ url('/subcategory/store') }}" method="POST">
+                  <form action="{{ url('/subcategory/update/'.$subcategory->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label">Select Category Name</label>
                         <select class="form-control" name="category_id">
-                            <option class="seleted disabled">Select A Catagory </option>
-                            @foreach ($category as $rows)
-                              <option value="{{ $rows->id }}">{{ $rows->name }}</option>
+                            @foreach ( $category as $rows )
+                            <option class="selected" value="{{ $rows->id }}" selected >{{ $rows->name }}</option>
                             @endforeach
+
                         </select>
                     </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Sub Category Name">
+                    <input type="text" name="name" Value="{{ $subcategory->name }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Sub Category Name">
                    </div>
-                  <button type="submit" class=" btn btn-block btn-success">Create</button>
+                  <button type="submit" class=" btn btn-block btn-success">Update</button>
                   </form>
            </div>
          </div>

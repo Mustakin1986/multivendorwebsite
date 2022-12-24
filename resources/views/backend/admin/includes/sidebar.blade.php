@@ -49,7 +49,7 @@
         <div id="subcategories" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ url('/subcategory/create') }}">Add Sub Category</a>
-                <a class="collapse-item" href="cards.html">Manage Sub-Caterory</a>
+                <a class="collapse-item" href="{{ url('/subcategory/Manage') }}">Manage Sub-Caterory</a>
             </div>
         </div>
     </li>
