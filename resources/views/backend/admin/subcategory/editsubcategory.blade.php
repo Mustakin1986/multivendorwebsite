@@ -10,7 +10,7 @@
         @endif
          <div class="card">
            <div class="card-body">
-            <h1>Add Sub Category</h1>
+            <h1>Update Sub Category</h1>
                   <form action="{{ url('/subcategory/update/'.$subcategory->id) }}" method="POST">
                     @csrf
                     <div class="form-group">

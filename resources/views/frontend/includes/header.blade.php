@@ -6,9 +6,9 @@
             </div>
             <div class="top-right">
             <ul>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="#">Checkout</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="registered.html"> Create Account </a></li>
+                <li><a href="registered.html">Vendor Account </a></li>
             </ul>
             </div>
             <div class="clearfix"></div>
@@ -30,10 +30,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    </div> 
+                    </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html" class="act">Home</a></li>	
+                            <li class="active"><a href="index.html" class="act">Home</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="col-sm-3  multi-gd-img">
                                                 <a href="products.html"><img src="{{ asset('frontend/assets/') }}/images/woo.jpg" alt=" "/></a>
-                                        </div> 
+                                        </div>
                                         <div class="col-sm-3  multi-gd-img">
                                                 <a href="products.html"><img src="{{ asset('frontend/assets/') }}/images/woo1.jpg" alt=" "/></a>
                                         </div>
@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="col-sm-3  multi-gd-img">
                                                 <a href="products1.html"><img src="{{ asset('frontend/assets/') }}/images/woo3.jpg" alt=" "/></a>
-                                        </div> 
+                                        </div>
                                         <div class="col-sm-3  multi-gd-img">
                                                 <a href="products1.html"><img src="{{ asset('frontend/assets/') }}/images/woo4.jpg" alt=" "/></a>
                                         </div>
@@ -121,7 +121,7 @@
                         <form action="#" method="post">
                             <input name="Search" type="search" placeholder="Search...">
                         </form>
-                    </div>	
+                    </div>
                 </div>
                 <div class="header-right2">
                     <div class="cart box_1">
@@ -133,7 +133,7 @@
                         </a>
                         <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                         <div class="clearfix"> </div>
-                    </div>	
+                    </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>

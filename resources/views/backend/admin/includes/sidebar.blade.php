@@ -61,8 +61,8 @@
         </a>
         <div id="brand" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Add Brand</a>
-                <a class="collapse-item" href="cards.html">Manage Brand</a>
+                <a class="collapse-item" href="{{ url('/add/brand') }}">Add Brand</a>
+                <a class="collapse-item" href="{{ url('/manage/brand') }}">Manage Brand</a>
             </div>
         </div>
     </li>

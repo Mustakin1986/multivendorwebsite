@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\subcategoryController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\frontend\FrontendController;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/', [FrontendController::class,'index']);
 Route::get('/admin/login',[AdminController::class,'adminloginForm']);
 Route::post('/admin/login',[AdminController::class,'adminlogin']);
 Route::get('/admin/dashboard',[AdminController::class,'adminDashboard']);
+Route::get('/admin/logout',[AdminController::class,'adminLogout']);
 
 //Category controller
 Route::get('/category/create',[CategoryController::class,'categorycreate']);
@@ -42,6 +44,14 @@ Route::get('/subcategory/Manage',[SubcategoryController::class,'subcategoryManag
 Route::get('/subcategory/edit/{id}',[SubcategoryController::class,'subcategoryEdit']);
 Route::get('/subcategory/delete/{id}',[SubcategoryController::class,'subcategoryDelete']);
 Route::post('/subcategory/update/{id}',[SubcategoryController::class,'subcategoryUpdate']);
+
+// add brand
+Route::get('/add/brand',[BrandController::class,'addBrand']);
+Route::post('/brand/store',[BrandController::class,'brandStore']);
+Route::get('/manage/brand',[BrandController::class,'manageBrand']);
+Route::get('/brand/delete/{id}',[BrandController::class,'brandDelete']);
+Route::get('/brand/edit/{id}',[BrandController::class,'brandEdit']);
+Route::post('/brand/update/{id}',[BrandController::class,'brandUpdate']);
 
 // Color Controller
 Route::get('/color/addcolor',[ColorController::class,'add_color']);

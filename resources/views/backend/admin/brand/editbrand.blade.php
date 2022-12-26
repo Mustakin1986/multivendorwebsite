@@ -10,24 +10,24 @@
         @endif
          <div class="card">
            <div class="card-body">
-            <h1>Add Sub Category</h1>
-                  <form action="{{ url('/subcategory/store') }}" method="POST">
+            <h1>Brand Update</h1>
+                  <form action="{{ url('/brand/update/'.$brand->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label">Select Category Name</label>
                         <select class="form-control" name="category_id">
-                            <option class="seleted disabled">Select A Catagory </option>
-                            @foreach ($categories as $rows)
-                              <option value="{{ $rows->id }}">{{ $rows->name }}</option>
+                            @foreach ( $category as $rows )
+                            <option class="selected" value="{{ $rows->id }}" selected >{{ $rows->name }}</option>
                             @endforeach
+
                         </select>
                     </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Sub Category Name">
+                    <input type="text" name="name" Value="{{ $brand->name }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Sub Category Name">
                    </div>
-                  <button type="submit" class=" btn btn-block btn-success">Create</button>
-                  </form>
+                  <button type="submit" class=" btn btn-block btn-success">Update</button>
+                </form>
            </div>
          </div>
        </div>

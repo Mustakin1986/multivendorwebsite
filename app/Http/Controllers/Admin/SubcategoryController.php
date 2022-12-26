@@ -28,6 +28,7 @@ class SubcategoryController extends Controller
       $subcategory->save();
       return redirect()->back()->with('success','subcategory has been created');
     }
+
     public function subcategoryManage()
     {
         $subcategories = Subcategory::with('category')->paginate(5);

@@ -36,8 +36,8 @@ class CategoryController extends Controller
    $category= new Category();
    $category->name = $request->name;
    $category->slug=str_replace(' ','-',strtolower($request->name));
-  $category->image = $name;
-  $category->save();
+   $category->image = $name;
+   $category->save();
   return redirect()->back()->with('success','Category has been created');
   }
 

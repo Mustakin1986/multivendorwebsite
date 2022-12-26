@@ -10,8 +10,8 @@
         @endif
          <div class="card">
            <div class="card-body">
-            <h1>Add Sub Category</h1>
-                  <form action="{{ url('/subcategory/store') }}" method="POST">
+            <h1>Add Brand</h1>
+                  <form action="{{ url('/brand/store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label">Select Category Name</label>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Sub Category Name">
+                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Brand Name">
                    </div>
                   <button type="submit" class=" btn btn-block btn-success">Create</button>
                   </form>

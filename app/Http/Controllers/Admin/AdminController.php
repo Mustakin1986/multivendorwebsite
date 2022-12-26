@@ -24,4 +24,9 @@ class AdminController extends Controller
     {
       return view('backend.admin.home.index');
     }
+    public function adminLogout()
+    {
+     session()->flush();
+     return redirect('/');
+    }
 }
