@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('sizes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('category_id');
             $table->string('name');
             $table->boolean('status');
             $table->timestamps();

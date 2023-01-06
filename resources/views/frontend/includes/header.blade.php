@@ -2,13 +2,13 @@
     <div class="header-top">
         <div class="container">
              <div class="top-left">
-                <a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
+                <a href="{{ '/' }}"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
             </div>
             <div class="top-right">
             <ul>
                 <li><a href="#">Checkout</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="registered.html">Vendor Account </a></li>
+                <li><a href="{{ url('/vendor/login')  }}">Login</a></li>
+                <li><a href="{{ url('/vendor/register') }}">Vendor Account </a></li>
             </ul>
             </div>
             <div class="clearfix"></div>
@@ -18,7 +18,7 @@
         <div class="container">
             <div class="logo-nav">
                 <div class="logo-nav-left">
-                    <h1><a href="index.html">New Shop <span>Shop anywhere</span></a></h1>
+                    <h1><a href="{{ '/' }}">New Shop <span>Shop anywhere</span></a></h1>
                 </div>
                 <div class="logo-nav-left1">
                     <nav class="navbar navbar-default">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html" class="act">Home</a></li>
+                            <li class="active"><a href="{{ '/' }}" class="act">Home</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>

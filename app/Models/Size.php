@@ -9,4 +9,9 @@ class Size extends Model
 {
     use HasFactory;
     protected $guarded =[];
+
+    public function Category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

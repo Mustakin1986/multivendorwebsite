@@ -10,8 +10,8 @@
         @endif
          <div class="card">
            <div class="card-body">
-            <h1>Colour Name</h1>
-                  <form action="{{ url('/store/color') }}" method="POST">
+            <h1>Add Size</h1>
+                  <form action="{{ url('/store/size') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label">Select A Category</label>
@@ -23,8 +23,8 @@
                        </select>
                     </div>
                     <div class="form-group">
-                    <label for="exampleInputEmail1" class="form-label">Add Color</label>
-                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Colour Name">
+                    <label for="exampleInputEmail1" class="form-label">Add Size</label>
+                    <input type="text"name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter Size">
                    </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label">Status</label>
@@ -34,7 +34,7 @@
                           <option value="1">Active</option>
                      </select>
                    </div>
-                  <button type="submit" class=" btn btn-block btn-success">Add Color</button>
+                  <button type="submit" class=" btn btn-block btn-success">Add Size</button>
                   </form>
            </div>
          </div>

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('colors', function (Blueprint $table) {
             $table->id();
+            $table->integer('category_id');
             $table->string('name');
             $table->boolean('status');
             $table->timestamps();

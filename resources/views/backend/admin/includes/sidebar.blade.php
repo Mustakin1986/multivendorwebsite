@@ -75,7 +75,7 @@
         <div id="color" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ url('/color/addcolor') }}">Add Color</a>
-                <a class="collapse-item" href="{{ url('/category/manage') }}">Manage Color</a>
+                <a class="collapse-item" href="{{ url('/color/manage') }}">Manage Color</a>
             </div>
         </div>
     </li>
@@ -87,8 +87,8 @@
         </a>
         <div id="size" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Add Size</a>
-                <a class="collapse-item" href="cards.html">Manage Size</a>
+                <a class="collapse-item" href="{{ url('/size/add_size') }}">Add Size</a>
+                <a class="collapse-item" href="{{ url('/size/manage') }}">Manage Size</a>
             </div>
         </div>
     </li>

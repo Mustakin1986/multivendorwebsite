@@ -51,7 +51,7 @@ class CategoryController extends Controller
         }
     }
     $categoryDelete->delete();
-    return redirect('/category/manage')->with('success','category has been deleted');
+    return redirect('/category/manage')->with('error','category has been deleted');
   }
 
   public function categoryEdit($id)

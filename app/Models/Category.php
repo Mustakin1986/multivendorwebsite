@@ -19,4 +19,12 @@ class Category extends Model
     {
      return $this->hasMany(brand::class);
     }
+    public function Color()
+    {
+     return $this->hasMany(color::class);
+    }
+    public function Size()
+    {
+     return $this->hasMany(size::class);
+    }
 }

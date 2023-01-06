@@ -30,13 +30,32 @@ jQuery(document).ready(function($){
 		toggleSearch();
 		closeNav();
 	});
+    const log_in=document.querySelector(".log-in");
+    const register_btn=document.querySelector(".register");
+    const login_form=document.getElementById("login-form");
+    const register_form=document.getElementById("register-form");
 
-	
-	
-	
+    register_btn.addEventListener("click",()=>
+    {
+        register_btn.classList.toggle('is-active');
+        login_form.classList.toggle('hidden');
+        register_form.classList.toggle("hidden");
+        log_in.classList.toggle('is-active');
+
+    });
+    log_in.addEventListener("click",()=>
+    {
+        log_in.classList.toggle('is-active');
+        register_btn.classList.toggle('is-active');
+        register_form.classList.toggle("hidden");
+        login_form.classList.toggle("hidden");
+    });
 
 
-	
+
+
+
+
 
 	//submenu items - go back link
 	$('.go-back').on('click', function(){
@@ -57,7 +76,7 @@ jQuery(document).ready(function($){
 
 	function toggleSearch(type) {
 		if(type=="close") {
-			//close serach 
+			//close serach
 			$('.cd-search').removeClass('is-visible');
 			$('.cd-search-trigger').removeClass('search-is-visible');
 			$('.cd-overlay').removeClass('search-is-visible');
@@ -73,7 +92,7 @@ jQuery(document).ready(function($){
 
 	function checkWindowWidth() {
 		//check window width (scrollbar included)
-		var e = window, 
+		var e = window,
             a = 'inner';
         if (!('innerWidth' in window )) {
             a = 'client';

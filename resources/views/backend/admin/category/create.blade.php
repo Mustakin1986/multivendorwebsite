@@ -5,9 +5,9 @@
      <div class="row">
        <div class="col-md-3"></div>
        <div class="col-md-6">
-        @if (session()->has('success'))
-        <div class=" alert alert-success">{{ session()->get('success')}}</div>
-        @endif
+                @if (session()->has('success'))
+                <div class=" alert alert-success">{{ session()->get('success')}}</div>
+                @endif
          <div class="card">
            <div class="card-body">
             <h1>Add Category</h1>
