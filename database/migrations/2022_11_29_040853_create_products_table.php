@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('vendor_id');
-            $table->unsignedInteger('color-id');
+            $table->unsignedInteger('color_id');
             $table->unsignedInteger('size_id');
             $table->string('name');
             $table->float('price',8,2);
+            $table->number('qty');
             $table->string('image');
             $table->string('multi_image');
             $table->boolean('status');

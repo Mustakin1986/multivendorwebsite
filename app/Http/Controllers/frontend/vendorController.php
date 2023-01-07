@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 use Session;
+use App\Models\Product;
 use App\Models\Color;
 use App\Models\Size;
 use App\Models\Vendor;
@@ -79,7 +80,7 @@ class vendorController extends Controller
             {
                 if($request->file('image')){
                     $name = time().'.'.$request->image->extension();
-                    $request->image->move(public_path('/product/'),$name);
+                    $request->image->move(public_path('/product/'), $name);
             }
 
             $product = new product();
@@ -90,7 +91,7 @@ class vendorController extends Controller
             $product->name = $request->name;
             $product->price = $request->price;
             $product->qty = $request->qty;
-            $product->image = $request->$name;
+            $product->image = $name;
 
             if($request->hasFile('multi_image')){
                 foreach($request->file('multi_image') as $images ){

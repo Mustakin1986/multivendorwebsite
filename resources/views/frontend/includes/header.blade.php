@@ -42,6 +42,7 @@
                                     <div class="row">
                                         <div class="col-sm-3  multi-gd-img">
                                             @foreach ($category->Subcategory as $subcategory )
+
                                             <ul class="multi-column-dropdown">
                                                 <h6>Submenu1</h6>
                                                 <li><a href="products.html">{{$subcategory->name }}</a></li>
@@ -65,16 +66,6 @@
                         </ul>
                     </div>
                     </nav>
-                </div>
-                <div class="logo-nav-right">
-                    <ul class="cd-header-buttons">
-                        <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-                    </ul> <!-- cd-header-buttons -->
-                    <div id="cd-search" class="cd-search">
-                        <form action="#" method="post">
-                            <input name="Search" type="search" placeholder="Search...">
-                        </form>
-                    </div>
                 </div>
                 <div class="header-right2">
                     <div class="cart box_1">

@@ -29,7 +29,7 @@ Route::post('/vendor/registration', [vendorController::class,'vendorRegistration
 Route::post('/vendor/login', [vendorController::class,'vendorLogin']);
 Route::get('/vendor/dashboard', [vendorController::class,'vendorDashboard']);
 Route::get('/vendor/product/create', [vendorController::class,'vendorProductCreateForm']);
-Route::post('//vendor/product/store', [vendorController::class,'vendorProductStore']);
+Route::post('/vendor/product/store', [vendorController::class,'vendorProductStore']);
 
 
 
