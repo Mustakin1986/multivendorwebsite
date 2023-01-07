@@ -91,5 +91,16 @@ class vendorController extends Controller
             $product->price = $request->price;
             $product->qty = $request->qty;
             $product->image = $request->$name;
+
+            if($request->hasFile('multi_image')){
+                foreach($request->file('multi_image') as $images ){
+                    $imagesName =rand(999,9999).'.'.$images->extension();
+                    $images->move(public_path('/gallery/'),$imagesName);
+                    $data[]=$imagesName;
+                }
+            }
+            $product->multi_image = json_encode($data);
+            $product->save();
+            return redirect()->back()->with('success','Product has be created');
          }
 }
