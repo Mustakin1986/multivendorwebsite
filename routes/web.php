@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\vendorController;
+use App\Http\Controllers\Admin\AdminVendorController;
 use App\Http\Controllers\Admin\subcategoryController;
 use App\Http\Controllers\frontend\FrontendController;
 
@@ -77,3 +78,7 @@ Route::post('/store/size',[SizeController::class,'sizeStore']);
 Route::get('/size/manage',[SizeController::class,'sizeManage']);
 Route::get('/size/delete/{id}',[SizeController::class,'sizeDelete']);
 
+//Admin vendors
+Route::get('/vendors',[AdminVendorController::class,'vendors']);
+Route::get('/admin/vendor/approved/{id}',[AdminVendorController::class,'vendorApproved']);
+Route::get('/admin/vendor/pending/{id}',[AdminVendorController::class,'vendorPending']);

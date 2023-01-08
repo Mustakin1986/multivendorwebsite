@@ -9,20 +9,36 @@
                 <th>Sl</th>
                 <th>Image</th>
                 <th>Name</th>
+                <th>Category Name</th>
                 <th>Price</th>
                 <th>Qty</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+            @foreach ( $product as $row)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $loop->index+1 }}</td>
+                <td>
+                    <img src="{{asset('/product/'.$row->image)}}" height="50" width="50"/>
+                </td>
+                <td>{{ $row->name }}</td>
+                <td>{{ $row->category->name }}</td>
+                <td>{{ $row->price }}</td>
+                <td>{{ $row->qty }}</td>
+                <td>
+                    @if($row->status==0)
+                        <span class="badge badge-danger">Pending</span>
+                    @else
+                    <span class="badge badge-success">Approved</span>
+                    @endif
+                </td>
+                <td>
+                    <a href="" class="btn btn-sm btn-info">Edit</a>
+                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                </td>
             </tr>
+            @endforeach
+
             </table>
       </div>
     </div>

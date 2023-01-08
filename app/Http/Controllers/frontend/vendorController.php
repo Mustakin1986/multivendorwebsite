@@ -66,7 +66,8 @@ class vendorController extends Controller
             }
             public function vendorDashboard()
             {
-                return view('frontend.vendor.dashboard');
+                $product = Product::with('category','color','size')->where('vendor_id', session()->get('vendorId'))->get();
+                return view('frontend.vendor.dashboard', compact('product'));
             }
             public function vendorProductCreateForm()
             {
