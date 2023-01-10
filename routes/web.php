@@ -82,3 +82,6 @@ Route::get('/size/delete/{id}',[SizeController::class,'sizeDelete']);
 Route::get('/vendors',[AdminVendorController::class,'vendors']);
 Route::get('/admin/vendor/approved/{id}',[AdminVendorController::class,'vendorApproved']);
 Route::get('/admin/vendor/pending/{id}',[AdminVendorController::class,'vendorPending']);
+Route::get('/vendor/products',[AdminVendorController::class,'vendorProducts']);
+Route::get('/vendor/product/approved/{id}',[AdminVendorController::class,'productApproved']);
+Route::get('/vendor/product/pending/{id}',[AdminVendorController::class,'productPending']);

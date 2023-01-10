@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Vendor;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -28,6 +29,26 @@ class AdminVendorController extends Controller
     $vendor->save();
     return redirect()->back()->with('error','Vendor has been Pending');
 
+   }
+   public function vendorProducts()
+   {
+    $products = Product::with('category','color','size')->get();
+    return view('backend.admin.adminVendor.vendorProduct',compact('products'));
+   }
+   public function productApproved($id)
+   {
+    $product = Product::find($id);
+    $product->status=1;
+    $product->save();
+    return redirect()->back()->with('success','Product has been approved');
+   }
+
+   public function productPending($id)
+   {
+    $product = Product::find($id);
+    $product->status=0;
+    $product->save();
+    return redirect()->back()->with('error','Product has been Pending');
    }
 
 }
