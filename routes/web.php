@@ -5,10 +5,11 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Frontend\vendorController;
 use App\Http\Controllers\Admin\AdminVendorController;
+use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\subcategoryController;
 use App\Http\Controllers\frontend\FrontendController;
+use App\Http\Controllers\Frontend\vendorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,16 @@ use App\Http\Controllers\frontend\FrontendController;
 });*/
 
 Route::get('/', [FrontendController::class,'index']);
+
+//user controller
+Route::get('/user/login',[FrontendController::class,'userLogin']);
+Route::get('/user/register',[FrontendController::class,'userRegister']);
+
+//Vendor Controller
 Route::get('/vendor/register', [vendorController::class,'vendorRegister']);
 Route::post('/vendor/registration', [vendorController::class,'vendorRegistration']);
 Route::post('/vendor/login', [vendorController::class,'vendorLogin']);
+Route::get('/vendor/logout', [vendorController::class,'vendorLogout']);
 Route::get('/vendor/dashboard', [vendorController::class,'vendorDashboard']);
 Route::get('/vendor/product/create', [vendorController::class,'vendorProductCreateForm']);
 Route::post('/vendor/product/store', [vendorController::class,'vendorProductStore']);
@@ -85,3 +93,11 @@ Route::get('/admin/vendor/pending/{id}',[AdminVendorController::class,'vendorPen
 Route::get('/vendor/products',[AdminVendorController::class,'vendorProducts']);
 Route::get('/vendor/product/approved/{id}',[AdminVendorController::class,'productApproved']);
 Route::get('/vendor/product/pending/{id}',[AdminVendorController::class,'productPending']);
+Route::get('/vendor/product/delete/{id}',[AdminVendorController::class,'productDelete']);
+
+// Product Type
+Route::get('/product/type',[ProductTypeController::Class,'ProductType']);
+Route::post('/store/productType',[ProductTypeController::Class,'ProductTypeAdd']);
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -92,7 +92,7 @@
             <div class="container">
                 <h2 class="tittle">New Arrivals</h2>
                 <div class="arrivals-grids">
-                    @foreach ($products as $product)
+                    @foreach ($new_products as $product)
                     <div class="col-md-3 arrival-grid simpleCart_shelfItem">
                         <div class="grid-arr">
                             <div  class="grid-arrival">
@@ -146,7 +146,7 @@
     <!--Products-->
         <div class="product-agile">
             <div class="container">
-                <h3 class="tittle1"> New Products</h3>
+                <h3 class="tittle1"> HOT Products</h3>
                 <div class="slider">
                     <div class="callbacks_container">
                         <ul class="rslides" id="slider">
@@ -159,9 +159,6 @@
                                                     <a href="single.html">
                                                         <div class="grid-img">
                                                             <img  src="{{ asset('frontend/assets/') }}/images/p14.jpg" class="img-responsive" alt="">
-                                                        </div>
-                                                        <div class="{{ asset('frontend/assets/') }}/grid-img">
-                                                            <img  src="{{ asset('frontend/assets/') }}/images/p13.jpg" class="img-responsive"  alt="">
                                                         </div>
                                                     </a>
                                                 </figure>

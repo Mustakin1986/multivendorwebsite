@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('vendor_id');
             $table->unsignedInteger('color_id');
             $table->unsignedInteger('size_id');
+            $table->unsignedInteger('productType_id');
             $table->string('name');
             $table->float('price',8,2);
             $table->number('qty');

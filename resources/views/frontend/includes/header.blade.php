@@ -7,8 +7,30 @@
             <div class="top-right">
             <ul>
                 <li><a href="#">Checkout</a></li>
-                <li><a href="{{ url('/vendor/login')  }}">Login</a></li>
-                <li><a href="{{ url('/vendor/register') }}">Vendor Account </a></li>
+                @if (auth()->check())
+                <li><a href="#" class="badge badge-danger">{{auth()->user()->name }}</a></li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
+                @else
+                <li><a href="{{ url('/user/login')  }}">User Login</a></li>
+                <li><a href="{{ url('/user/register') }}">User register </a></li>
+                @endif
+                @if (session()->has('vendorId'))
+                <li><a href="{{ url('/vendor/deshboard') }}" class="badge badge-danger"> {{ session()->get('vendorName') }}</a></li>
+                <li><a href="{{ url('/vendor/logout') }}">Logout </a></li>
+                @else
+                <li><a href="{{ url('/vendor/login')  }}">Vendor Login</a></li>
+                <li><a href="{{ url('/vendor/register') }}">Vendor Register </a></li>
+                @endif
             </ul>
             </div>
             <div class="clearfix"></div>

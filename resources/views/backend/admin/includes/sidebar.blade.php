@@ -93,6 +93,19 @@
         </div>
     </li>
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#product"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Product Type</span>
+        </a>
+        <div id="product" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ url('/product/type') }}">Product Type</a>
+                <a class="collapse-item" href="{{ url('/size/manage') }}">Manage Type</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#vendor"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -112,7 +125,7 @@
         </a>
         <div id="Products" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ url('/vendor/products') }}">Manage Size</a>
+                <a class="collapse-item" href="{{ url('/vendor/products') }}">Manage Product</a>
             </div>
         </div>
     </li>

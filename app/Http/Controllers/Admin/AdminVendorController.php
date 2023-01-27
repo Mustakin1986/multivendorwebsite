@@ -6,6 +6,7 @@ use App\Models\Vendor;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class AdminVendorController extends Controller
 {
@@ -32,7 +33,7 @@ class AdminVendorController extends Controller
    }
    public function vendorProducts()
    {
-    $products = Product::with('category','color','size')->get();
+    $products = Product::with('category','color','size')->orderBy('created_at','desc')->Paginate(5);
     return view('backend.admin.adminVendor.vendorProduct',compact('products'));
    }
    public function productApproved($id)
@@ -50,5 +51,17 @@ class AdminVendorController extends Controller
     $product->save();
     return redirect()->back()->with('error','Product has been Pending');
    }
-
+   public function productDelete($id)
+   {
+     $productDelete=Product::find($id);
+     if($productDelete){
+        $imageDelete = public_path('/product/'.$productDelete->image);
+        if(File::exists($imageDelete)){
+           File::delete($imageDelete);
+        }
+    }
+     $productDelete->Delete();
+     return redirect()->back()->with('error','Product has been Deleted');
+   }
 }
+

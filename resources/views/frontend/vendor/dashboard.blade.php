@@ -40,6 +40,7 @@
             @endforeach
 
             </table>
+            {{ $product->links()}}
       </div>
     </div>
 @endsection

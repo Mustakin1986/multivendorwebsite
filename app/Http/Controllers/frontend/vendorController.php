@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 use Session;
-use App\Models\Product;
-use App\Models\Color;
 use App\Models\Size;
+use App\Models\Color;
 use App\Models\Vendor;
+use App\Models\Product;
 use App\Models\Category;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -64,9 +65,16 @@ class vendorController extends Controller
                     }
                 }
             }
+
+            public function vendorLogout()
+            {
+             session()->flush();
+             return redirect('/')->with('success','you are Logout');
+            }
+
             public function vendorDashboard()
             {
-                $product = Product::with('category','color','size')->where('vendor_id', session()->get('vendorId'))->get();
+                $product = Product::with('category','color','size')->where('vendor_id', session()->get('vendorId'))->orderBy('created_at','desc')->Paginate(5);
                 return view('frontend.vendor.dashboard', compact('product'));
             }
             public function vendorProductCreateForm()
@@ -74,7 +82,8 @@ class vendorController extends Controller
                 $categories = Category::get();
                 $colors = Color::get();
                 $sizes = Size::get();
-                return view('frontend.vendor.create',compact('categories','colors','sizes'));
+                $productType = ProductType::get();
+                return view('frontend.vendor.create',compact('categories','colors','sizes','productType'));
             }
 
             public function vendorProductStore(Request $request)
@@ -84,11 +93,12 @@ class vendorController extends Controller
                     $request->image->move(public_path('/product/'), $name);
             }
 
-            $product = new product();
+            $product = new Product();
             $product->category_id = $request->category_id;
             $product->vendor_id = session()->get('vendorId');
             $product->color_id = $request->color_id;
             $product->size_id = $request->size_id;
+            $product->productType_id = $request->productType_id;
             $product->name = $request->name;
             $product->price = $request->price;
             $product->qty = $request->qty;

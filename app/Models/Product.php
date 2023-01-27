@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->belongsTo(Size::class);
     }
+     public function productType()
+    {
+     return $this->hasMany(ProductType::class);
+    }
+
 }

@@ -40,6 +40,15 @@
                     </select>
                  </div>
                  <div class="form-group">
+                    <label>Product Type</label>
+                     <select class="form-control" name="productType_id">
+                      <option  selected disabled> Select A product Type </option>
+                      @foreach ( $productType as $row )
+                      <option value="{{$row->id}}">{{$row->productType }}</option>
+                      @endforeach
+                    </select>
+                 </div>
+                 <div class="form-group">
                     <label>Product Name</label>
                      <input type="text" name="name" Value="{{ old('name')}}" class="form-control" placeholder=" Product Name"/>
                  </div>

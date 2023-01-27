@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+
         view()->composer('*',function($view){
             $view->with('categories', Category::with('Subcategory')->get());
         });
